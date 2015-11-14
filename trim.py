@@ -66,7 +66,7 @@ if __name__ == '__main__':
         
             print('Input your command.')
             print('  format:')
-            print('    [ltrb][0-9][1-9]* : trim the range')
+            print('    [altrb][0-9][1-9]* : trim the range')
             print('    z : undo')
             print('    Z : redo')
             print('    c : clear your edit')
@@ -78,7 +78,7 @@ if __name__ == '__main__':
         
             cmd_list = cmd.split(" ")
             
-            if (len(cmd_list) == 1):
+            if (len(cmd_list) == 1 and len(cmd_list[0]) == 1):
                 if (cmd_list[0] == 'z'):
                     # Undo
                     if (len(undo_stack) > 0):
@@ -115,11 +115,11 @@ if __name__ == '__main__':
                 undo_stack.append(cur)
                 redo_stack = []
                 for token in cmd_list:
-                    print token
                     if (len(token) == 1):
                         token = token + '0'
                     value = int(token[1:])
                     if (token[0] == 'l'):
+                        print "Test"
                         cur = cur.crop((value, 0, cur_width, cur_height))
                     elif (token[0] == 't'):
                         cur = cur.crop((0, value, cur_width, cur_height))
@@ -127,6 +127,8 @@ if __name__ == '__main__':
                         cur = cur.crop((0, 0, cur_width-value, cur_height))
                     elif (token[0] == 'b'):
                         cur = cur.crop((0, 0, cur_width, cur_height-value))
+                    elif (token[0] == 'a'):
+                        cur = cur.crop((value, value, cur_width-value, cur_height-value))
                     else:
                         print('Invalid command!')
                     cur_width, cur_height = cur.size
