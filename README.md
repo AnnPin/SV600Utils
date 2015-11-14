@@ -35,3 +35,10 @@ Contents
     -  Pythonスクリプト中でPillowモジュールを使用するので、あらかじめインストールをしておいてください
         +  `sudo easy_install Pillow`
 
+*  inpaint.command / inpaint.py
+    -  inpaint.commandをダブルクリックで実行することでinpaint.pyを実行し、ディレクトリ中に存在している"img"から始まる全てのJPGファイルに対して四隅のインペイントをコマンドラインで実行できる
+    -  "左隅を50px、右隅を20pxインペイントしたい"場合、シェル上で"l50 r20"と入力してください
+    -  Pythonスクリプト中でPillowモジュール、OpenCVを使用するので、あらかじめインストールをしておいてください
+        +  `sudo easy_install Pillow`
+        +  `pip install numpy`
+        +  `brew install homebrew/science/opencv`
