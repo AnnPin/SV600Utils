@@ -29,3 +29,9 @@ Contents
     -  Pythonスクリプト中でPillowモジュールを使用するので、あらかじめインストールをしておいてください
         +  `sudo easy_install Pillow`
 
+*  auto\_trim.command / auto\_trim.py
+    -  auto\_trim.commandをダブルクリックで実行することでauto\_trim.pyを実行し、ディレクトリ中に存在している"img"から始まる全てのJPGファイルに対して四隅のトリミングをコマンドラインで実行できる
+    -  四隅を自動的にトリミングします。コード中のthreshouldの値を書き換えると、トリミングの閾値を変更できます
+    -  Pythonスクリプト中でPillowモジュールを使用するので、あらかじめインストールをしておいてください
+        +  `sudo easy_install Pillow`
+
