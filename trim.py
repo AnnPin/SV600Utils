@@ -119,7 +119,6 @@ if __name__ == '__main__':
                         token = token + '0'
                     value = int(token[1:])
                     if (token[0] == 'l'):
-                        print "Test"
                         cur = cur.crop((value, 0, cur_width, cur_height))
                     elif (token[0] == 't'):
                         cur = cur.crop((0, value, cur_width, cur_height))
