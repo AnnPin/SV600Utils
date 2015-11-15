@@ -172,18 +172,18 @@ if __name__ == '__main__':
                     cur_width, cur_height = cur.size
         
         # バックアップ用フォルダが存在しないなら作成
-        if (not os.path.exists('bk')):
-            os.mkdir('bk')
+        if (not os.path.exists('inpaint_bk')):
+            os.mkdir('inpaint_bk')
         
         # 既に重複するファイル名が存在するなら名前に現在時刻を付加してから保存
-        if (not os.path.isfile('bk/'+img_name)):
-            src.save('bk/'+img_name, quality=100)
+        if (not os.path.isfile('inpaint_bk/'+img_name)):
+            src.save('inpaint_bk/'+img_name, quality=75)
         else:
             date = str( datetime.now().strftime("%Y-%m-%d %H-%M-%S") )
-            src.save('bk/'+img_prefix+'_'+date+img_suffix, quality=100)
+            src.save('inpaint_bk/'+img_prefix+'_'+date+img_suffix, quality=75)
     
         # 編集後のファイルを保存
-        cur.save(img_name, quality=100)
+        cur.save(img_name, quality=75)
 
     print 'Done!'
 

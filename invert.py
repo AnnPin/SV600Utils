@@ -20,6 +20,6 @@ if __name__ == '__main__':
         img_name = file
         src = Image.open(img_name) # 画像の読み込み
         inverted = PIL.ImageOps.invert(src)
-        inverted.save(img_name, quality=100)
+        inverted.save(img_name, quality=75)
     print 'Done!'
 

@@ -240,7 +240,7 @@ if __name__ == '__main__':
             
             
         # 削りすぎていないかを確認しておく
-        if src_width-cur_width > 50 or src_height-cur_height > 50:
+        if src_width-cur_width > 25 or src_height-cur_height > 25:
             print('CAUTION: Too trimed!')
             if (not os.path.exists('too_trim')):
                 os.mkdir('too_trim')
@@ -254,18 +254,18 @@ if __name__ == '__main__':
             print'Height trim: ', src_height-cur_height
     
             # バックアップ用フォルダが存在しないなら作成
-            if (not os.path.exists('bk')):
-                os.mkdir('bk')
+            if (not os.path.exists('auto_trim_bk')):
+                os.mkdir('auto_trim_bk')
             
             # 既に重複するファイル名が存在するなら名前に現在時刻を付加してから保存
-            if (not os.path.isfile('bk/'+img_name)):
-                src.save('bk/'+img_name, quality=100)
+            if (not os.path.isfile('auto_trim_bk/'+img_name)):
+                src.save('auto_trim_bk/'+img_name, quality=75)
             else:
                 date = str( datetime.now().strftime("%Y-%m-%d %H-%M-%S") )
-                src.save('bk/'+img_prefix+'_'+date+img_suffix, quality=100)
+                src.save('auto_trim_bk/'+img_prefix+'_'+date+img_suffix, quality=75)
         
             # 編集後のファイルを保存
-            cur.save(img_name, quality=100)
+            cur.save(img_name, quality=75)
         print('')
 
     print 'Done!'

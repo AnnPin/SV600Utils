@@ -42,3 +42,14 @@ Contents
         +  `sudo easy_install Pillow`
         +  `pip install numpy`
         +  `brew install homebrew/science/opencv`
+
+*  final\_trim.command / final\_trim.py
+    -  final\_trim.commandをダブルクリックで実行することでfinal\_trim.pyを実行し、ディレクトリ中に存在している"img"から始まる全てのJPGファイルに対して四隅の最終トリミングを行う
+    -  Pythonスクリプト中でPillowモジュール、OpenCVを使用するので、あらかじめインストールをしておいてください
+        +  `sudo easy_install Pillow`
+
+*  final\_gray.command / final\_gray.py
+    -  final\_gray.commandをダブルクリックで実行することでfinal\_gray.pyを実行し、ディレクトリ中に存在している"img"から始まる全てのJPGファイルをグレースケールrに変換する
+    -  Pythonスクリプト中でPillowモジュール、OpenCVを使用するので、あらかじめインストールをしておいてください
+        +  `sudo easy_install Pillow`
+
